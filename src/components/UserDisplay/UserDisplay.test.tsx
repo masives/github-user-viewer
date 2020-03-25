@@ -6,27 +6,27 @@ import { GithubUser, GithubRepository } from '../../types/github';
 const sampleUser: GithubUser = {
   avatar_url: 'https://valid-url.com/valid-image.png',
   bio: 'Some user bio',
-  name: 'Some username',
+  name: 'usename',
 };
 
 const repositories: GithubRepository[] = [
   {
     fork: true,
-    html_url: 'https://github.com/username1',
+    html_url: 'https://github.com/username',
     id: 1,
     name: 'someName1',
     stargazers_count: 0,
   },
   {
     fork: true,
-    html_url: 'https://github.com/username2',
+    html_url: 'https://github.com/username',
     id: 2,
     name: 'someName2',
     stargazers_count: 0,
   },
   {
     fork: true,
-    html_url: 'https://github.com/username3',
+    html_url: 'https://github.com/username',
     id: 3,
     name: 'someName3',
     stargazers_count: 0,
