@@ -8,7 +8,7 @@ type PropTypes = {
 
 const UserDisplay = ({ repositories, userDetails }: PropTypes) => {
   if (!userDetails) {
-    return <div>There's no such user</div>;
+    return null;
   }
 
   const { name, avatar_url, bio } = userDetails;

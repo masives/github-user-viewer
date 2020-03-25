@@ -13,14 +13,20 @@ function App() {
   const [userDetails, setUserDetails] = useState<GithubUser | null>(null);
   const [repositories, setRepositories] = useState<GithubRepository[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleFormSubmit = async () => {
     setIsLoading(true);
+    setErrorMessage(null);
     try {
       const { user, repositories } = await fetchGithubUserData(username);
       setUserDetails(user);
       const topRepositories = filterTopRepositories({ repositories, count: 3 });
       setRepositories(topRepositories);
+    } catch (error) {
+      setErrorMessage(error.message);
+      setUserDetails(null);
+      setRepositories([]);
     } finally {
       setIsLoading(false);
     }
@@ -30,6 +36,7 @@ function App() {
     <div className="App">
       <UserForm handleUserNameChange={handleUserNameChange} handleFormSubmit={handleFormSubmit} username={username} />
       {!isLoading ? <UserDisplay repositories={repositories} userDetails={userDetails} /> : <LoadingIndicator />}
+      {Boolean(errorMessage) && <div>{errorMessage}</div>}
     </div>
   );
 }
