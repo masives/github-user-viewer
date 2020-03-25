@@ -1,24 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import useUserForm from './components/UserForm/useUserForm';
+import UserForm from './components/UserForm/UserForm';
 
 function App() {
+  const { username, handleUserNameChange } = useUserForm();
+
+  const handleFormSubmit = () => {
+    console.log('fetch user with username', username);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UserForm handleUserNameChange={handleUserNameChange} handleFormSubmit={handleFormSubmit} username={username} />
     </div>
   );
 }
