@@ -38,9 +38,13 @@ function App() {
 
   return (
     <div className="App">
-      <UserForm handleUserNameChange={handleUserNameChange} handleFormSubmit={handleFormSubmit} username={username} />
+      <UserForm
+        handleUserNameChange={handleUserNameChange}
+        handleFormSubmit={handleFormSubmit}
+        username={username}
+        errorMessage={errorMessage}
+      />
       {!isLoading ? <UserDisplay repositories={repositories} userDetails={userDetails} /> : <LoadingIndicator />}
-      {Boolean(errorMessage) && <div>{errorMessage}</div>}
     </div>
   );
 }
