@@ -7,6 +7,8 @@ import { fetchGithubUserData } from './api/github';
 import UserDisplay from './components/UserDisplay/UserDisplay';
 import { filterTopRepositories } from './utils/github';
 
+const TOP_REPOSITORIES_COUNT = 3;
+
 function App() {
   const { username, handleUserNameChange } = useUserForm();
   const [userDetails, setUserDetails] = useState<GithubUser | null>(null);
@@ -24,7 +26,7 @@ function App() {
     try {
       const { user, repositories } = await fetchGithubUserData(username);
       setUserDetails(user);
-      const topRepositories = filterTopRepositories({ repositories, count: 3 });
+      const topRepositories = filterTopRepositories({ repositories, count: TOP_REPOSITORIES_COUNT });
       setRepositories(topRepositories);
     } catch (error) {
       setErrorMessage(error.message);
