@@ -1,0 +1,33 @@
+.container {
+  max-width: 500px;
+  margin: 1rem auto;
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+}
+
+.profileImage {
+  max-width: 200px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.repositoryList {
+  counter-reset: list-counter;
+  list-style: none;
+  text-align: left;
+}
+.repositoryList li {
+  margin: 1.5em 0;
+  line-height: 1em;
+}
+.repositoryList li:before {
+  content: counter(list-counter);
+  counter-increment: list-counter;
+  font-family: arial;
+  color: #666;
+  font: bold;
+  font-size: 2em;
+  margin-right: 0.5em;
+}
