@@ -30,6 +30,12 @@
   display: block;
   font-size: 1.25rem;
   padding: 0.5rem;
+  transition: all 200ms ease;
+}
+
+.button:hover {
+  background: white;
+  color: darkblue;
 }
 
 .error {
