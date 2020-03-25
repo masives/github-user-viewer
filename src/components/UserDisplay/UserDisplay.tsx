@@ -1,14 +1,19 @@
 import * as React from 'react';
 import { GithubRepository, GithubUser } from '../../types/github';
+import LoadingIndicator from '../LoadingIndicator';
 
 type PropTypes = {
   repositories: GithubRepository[];
   userDetails: GithubUser | null;
+  isLoading: boolean;
 };
 
-const UserDisplay = ({ repositories, userDetails }: PropTypes) => {
+const UserDisplay = ({ repositories, userDetails, isLoading }: PropTypes) => {
   if (!userDetails) {
     return null;
+  }
+  if (isLoading) {
+    return <LoadingIndicator />;
   }
 
   const { name, avatar_url, bio } = userDetails;

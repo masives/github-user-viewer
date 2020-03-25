@@ -12,7 +12,7 @@ function App() {
   const { username, handleUserNameChange } = useUserForm();
   const [userDetails, setUserDetails] = useState<GithubUser | null>(null);
   const [repositories, setRepositories] = useState<GithubRepository[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isGithubUserLoading, setIsGithubUserLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleFormSubmit = async () => {
@@ -20,7 +20,7 @@ function App() {
       setErrorMessage('Please provide username');
       return;
     }
-    setIsLoading(true);
+    setIsGithubUserLoading(true);
     setErrorMessage(null);
     try {
       const { user, repositories } = await fetchGithubUserData(username);
@@ -32,7 +32,7 @@ function App() {
       setUserDetails(null);
       setRepositories([]);
     } finally {
-      setIsLoading(false);
+      setIsGithubUserLoading(false);
     }
   };
 
@@ -44,7 +44,7 @@ function App() {
         username={username}
         errorMessage={errorMessage}
       />
-      {!isLoading ? <UserDisplay repositories={repositories} userDetails={userDetails} /> : <LoadingIndicator />}
+      <UserDisplay repositories={repositories} userDetails={userDetails} isLoading={isGithubUserLoading} />
     </div>
   );
 }
