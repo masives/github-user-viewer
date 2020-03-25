@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserForm component Should render correctly with error 1`] = `
+Array [
+  <form
+    className="form"
+    onSubmit={[Function]}
+  >
+    <label>
+      Username
+      <input
+        className="input"
+        name="username"
+        onChange={[Function]}
+        placeholder="eg. masives"
+        type="text"
+        value=""
+      />
+      <button
+        className="button"
+        type="submit"
+      >
+        Submit
+      </button>
+    </label>
+  </form>,
+  <p
+    className="error"
+  >
+    Some error message
+  </p>,
+]
+`;
+
+exports[`UserForm component Should render correctly without error 1`] = `
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <label>
+    Username
+    <input
+      className="input"
+      name="username"
+      onChange={[Function]}
+      placeholder="eg. masives"
+      type="text"
+      value=""
+    />
+    <button
+      className="button"
+      type="submit"
+    >
+      Submit
+    </button>
+  </label>
+</form>
+`;
