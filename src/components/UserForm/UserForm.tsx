@@ -32,7 +32,7 @@ const UserForm = ({ username, handleUserNameChange, handleFormSubmit, errorMessa
           </button>
         </label>
       </form>
-      {Boolean(errorMessage) && <p>{errorMessage}</p>}
+      {Boolean(errorMessage) && <p className={styles.error}>{errorMessage}</p>}
     </>
   );
 };
