@@ -38,7 +38,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div>
       <UserForm
         handleUserNameChange={handleUserNameChange}
         handleFormSubmit={handleFormSubmit}
