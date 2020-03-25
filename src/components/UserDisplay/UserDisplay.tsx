@@ -23,7 +23,7 @@ const UserDisplay = ({ repositories, userDetails }: PropTypes) => {
         <ol>
           {repositories.map((repository) => {
             return (
-              <li>
+              <li key={repository.id}>
                 <a href={repository.html_url}>{repository.name}</a>
               </li>
             );
