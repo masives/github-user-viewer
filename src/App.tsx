@@ -6,7 +6,6 @@ import { GithubUser, GithubRepository } from './types/github';
 import { fetchGithubUserData } from './api/github';
 import UserDisplay from './components/UserDisplay/UserDisplay';
 import { filterTopRepositories } from './utils/github';
-import LoadingIndicator from './components/LoadingIndicator';
 
 function App() {
   const { username, handleUserNameChange } = useUserForm();

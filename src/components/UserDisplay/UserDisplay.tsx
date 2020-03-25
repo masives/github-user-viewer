@@ -15,6 +15,9 @@ const UserDisplay = ({ repositories, userDetails, isLoading }: PropTypes) => {
   if (isLoading) {
     return <LoadingIndicator />;
   }
+  if (!userDetails) {
+    return null;
+  }
 
   const { name, avatar_url, bio } = userDetails;
 
