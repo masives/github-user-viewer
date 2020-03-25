@@ -16,6 +16,10 @@ function App() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleFormSubmit = async () => {
+    if (!Boolean(username)) {
+      setErrorMessage('Please provide username');
+      return;
+    }
     setIsLoading(true);
     setErrorMessage(null);
     try {
