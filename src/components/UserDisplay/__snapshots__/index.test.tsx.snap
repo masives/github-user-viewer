@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserDisplay component Should render correctly loading 1`] = `
+<div
+  className="loading-indicator-container"
+>
+  <p>
+    Loading...
+  </p>
+  <div>
+    <img
+      alt=""
+      src="loading-indicator-icon.svg"
+    />
+  </div>
+</div>
+`;
+
+exports[`UserDisplay component Should render correctly with User Data for user with bio 1`] = `
+<div
+  className="loading-indicator-container"
+>
+  <p>
+    Loading...
+  </p>
+  <div>
+    <img
+      alt=""
+      src="loading-indicator-icon.svg"
+    />
+  </div>
+</div>
+`;
+
+exports[`UserDisplay component Should render correctly with User Data for user without bio 1`] = `
+<div
+  className="loading-indicator-container"
+>
+  <p>
+    Loading...
+  </p>
+  <div>
+    <img
+      alt=""
+      src="loading-indicator-icon.svg"
+    />
+  </div>
+</div>
+`;
+
+exports[`UserDisplay component Should render correctly without user 1`] = `null`;

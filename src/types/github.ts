@@ -9,5 +9,5 @@ export type GithubRepository = {
 export type GithubUser = {
   name: string;
   avatar_url: string;
-  bio: string;
+  bio: string | undefined;
 };
