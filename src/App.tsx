@@ -4,6 +4,7 @@ import useUserForm from './components/UserForm/useUserForm';
 import UserForm from './components/UserForm/UserForm';
 import { GithubUser, GithubRepository } from './types/github';
 import { fetchGithubUserData } from './api/github';
+import UserDisplay from './components/UserDisplay/UserDisplay';
 
 function App() {
   const { username, handleUserNameChange } = useUserForm();
@@ -16,11 +17,10 @@ function App() {
     setRepositories(repositories);
   };
 
-  console.log('display user', { userDetails, repositories });
-
   return (
     <div className="App">
       <UserForm handleUserNameChange={handleUserNameChange} handleFormSubmit={handleFormSubmit} username={username} />
+      <UserDisplay repositories={repositories} userDetails={userDetails} />
     </div>
   );
 }
