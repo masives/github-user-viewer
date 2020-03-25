@@ -17,6 +17,7 @@
   counter-reset: list-counter;
   list-style: none;
   text-align: left;
+  padding-left: 0;
 }
 .repositoryList li {
   margin: 1.5em 0;
