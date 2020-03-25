@@ -1,4 +1,5 @@
 import * as React from 'react';
+import styles from './UserForm.module.css';
 
 type PropTypes = {
   username: string;
@@ -13,9 +14,18 @@ const UserForm = ({ username, handleUserNameChange, handleFormSubmit }: PropType
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
-      <label>Username</label>
-      <input name="username" type="text" value={username} placeholder="eg. masives" onChange={handleUserNameChange} />
+    <form onSubmit={onFormSubmit} className={styles.form}>
+      <label>
+        Username
+        <input
+          className={styles.input}
+          name="username"
+          type="text"
+          value={username}
+          placeholder="eg. masives"
+          onChange={handleUserNameChange}
+        />
+      </label>
     </form>
   );
 };
